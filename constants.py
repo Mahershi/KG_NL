@@ -12,8 +12,9 @@ type_reg_node = 'reg_node'
 type_head_node = 'head_node'
 
 
+edge_label_color = 'blue'
 node_color_map = {
     type_reg_node: 'white',
-    type_head_node: 'red'
+    type_head_node: 'red',
 }
 
