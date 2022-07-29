@@ -9,6 +9,17 @@ node_count = 0
 header_node_indexes = []
 temp_nodes = {}
 
+
+'''
+parse
+parameters:
+    <1>sentence: the text instance to be parsed
+    <2>dependency_parser: object of the dependency parser
+    <3>headers: list of Header nodes
+purpose:
+    This method generates dependencies for the given sentence using dependency_parser and then parses through the 
+    dependencies to generate a linked list instance. As well as add nodes and edges to graph accordingly while parsing the dependencies.
+'''
 def parse(sentence, dependency_parser, headers: list[Header]):
     global nnp
     global graph_edges, graph_edge_labels, node_count, temp_nodes
@@ -87,8 +98,14 @@ def parse(sentence, dependency_parser, headers: list[Header]):
 
 
 
-
+'''
+Handlers for individual tag
+'''
 class Handlers:
+    '''
+    Handler for Proper Noun tag.
+    Generated Header node for the proper noun and attached the sentence instance to it.
+    '''
     @classmethod
     def add_nnp(cls, pair, head, headers):
         global temp_nodes, node_count

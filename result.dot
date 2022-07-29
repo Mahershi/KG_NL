@@ -1,6 +1,6 @@
 strict graph  {
 0 [label=head, type=reg_node];
-1 [label="sells\n(VBZ)", type=reg_node];
+1 [label="produces\n(VBZ)", type=reg_node];
 2 [label=GOOGLE, type=head_node];
 3 [label="Google\n(NNP)", type=reg_node];
 4 [label="phones\n(NNS)", type=reg_node];

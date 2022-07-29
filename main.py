@@ -1,3 +1,9 @@
+'''
+URL for CoreNLPServer: java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000
+Location for CoreNLPServer: /Users/mahershibhavsar/Downloads/stanford-corenlp-4.4.0
+'''
+
+
 from parse import parse
 from init import init
 from graph import draw_complete, init_graph, draw_subgraph
@@ -6,6 +12,7 @@ global headers
 global dep_parser
 
 headers = []
+
 
 def show_headers_deep():
     global headers
@@ -40,16 +47,26 @@ def search_header(word) -> Header:
 
     return None
 
-
+'''
+Feed new knowledge
+'''
 def feed_knowledge():
     print("Note: Sentence must be grammatically accurate to produce correct results!")
     print("Text: ", end="")
     x = input()
     parse_trigger(sent=x)
 
+
+'''
+Display entire KG
+'''
 def show_knowledge_graph():
     draw_complete()
 
+
+'''
+Search for a topic in KG
+'''
 def search_knowledge_graph():
     print("Available Topics in KG")
     print("(Acquired from Proper Nouns)")
@@ -64,9 +81,14 @@ def search_knowledge_graph():
     else:
         print("Topic not available")
 
+
 def exit_control():
     exit()
 
+
+'''
+Main Loop for control options
+'''
 def run_loop():
     control_map = {
         1: feed_knowledge,

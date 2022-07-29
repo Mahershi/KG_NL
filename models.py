@@ -1,5 +1,9 @@
 from constants import head_tag, head_label
 
+
+'''
+Modal Class for Header Node
+'''
 class Header:
     next = None
     label = None
@@ -18,23 +22,26 @@ class Header:
             node.show()
         print("HEADER END---------------------------------------------------------------")
 
+'''
+Modal Class for regular nodes
+'''
 class Node:
     next = None
     prev = None
     edge = None
     tag = None
     label = None
-    mods = None
-    mod_edge = None
+    # mods = None
+    # mod_edge = None
 
-    def __init__(self, prev = None, next=[], edge=[], tag=None, label=None, mod=[], mod_edge=[]):
+    def __init__(self, prev = None, next=[], edge=[], tag=None, label=None,):
         self.prev = prev
         self.label = label
         self.edge = edge
         self.next = next
         self.tag = tag
-        self.mod = mod
-        self.mod_edge = mod_edge
+        # self.mod = mod
+        # self.mod_edge = mod_edge
 
     @classmethod
     def create_head(cls):
@@ -44,9 +51,9 @@ class Node:
         self.next.append(node)
         self.edge.append(edge)
 
-    def attach_mod(self, edge, mod_node):
-        self.mod.append(mod_node)
-        self.mod_edge.append(edge)
+    # def attach_mod(self, edge, mod_node):
+    #     self.mod.append(mod_node)
+    #     self.mod_edge.append(edge)
 
     def show(self):
         if self.prev:
